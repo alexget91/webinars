@@ -1,0 +1,9 @@
+.DS_Store
+Thumbs.db
+.idea
+*.iml
+*.log*
+node_modules/
+build/
+public/bundle.js
+public/bundle.js.map
