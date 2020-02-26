@@ -4,6 +4,8 @@ Thumbs.db
 *.iml
 *.log*
 node_modules/
-build/
+layout/
 public/bundle.js
 public/bundle.js.map
+/public/style.css
+/public/style.css.map
