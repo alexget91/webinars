@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import {bannerFull} from "../../common/global-prop-types";
 
 const Banner = (props) => {
   const {title, srcBig, srcSmall, url, cssClass} = props;
@@ -16,12 +16,6 @@ const Banner = (props) => {
   </div>;
 };
 
-Banner.propTypes = {
-  title: PropTypes.string,
-  srcBig: PropTypes.string.isRequired,
-  srcSmall: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
-  cssClass: PropTypes.string,
-};
+Banner.propTypes = bannerFull;
 
 export default Banner;

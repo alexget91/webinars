@@ -4,7 +4,7 @@ $catalog-width-desktop: 3 * ($catalog-card-width + $catalog-card-margin);
 $catalog-width-tablet: 2 * ($catalog-card-width + $catalog-card-margin);
 
 .catalog {
-  max-width: $catalog-width-desktop;
+  max-width: $catalog-card-width + $catalog-card-margin;
   margin: 0 auto;
   padding: 50px 0 112px;
 
@@ -17,11 +17,9 @@ $catalog-width-tablet: 2 * ($catalog-card-width + $catalog-card-margin);
   &__card {
     width: $catalog-card-width;
     margin: $catalog-card-margin / 2;
-    color: $theme-gray;
-    text-decoration: none;
 
     &--double {
-      width: 2 * $catalog-card-width + $catalog-card-margin;
+      width: $catalog-card-width;
       min-height: 300px;
       max-height: 450px;
     }
@@ -31,32 +29,40 @@ $catalog-width-tablet: 2 * ($catalog-card-width + $catalog-card-margin);
     margin-top: 40px;
   }
 
-  &__desktop-hidden {
+  &__mobile-hidden {
     display: none;
   }
-}
 
-
-@media (max-width: $catalog-width-desktop + $catalog-card-margin) {
-  .catalog {
-    max-width: $catalog-width-tablet;
+  &__desktop-hidden {
+    display: block;
   }
 }
 
-@media (max-width: $catalog-width-tablet + $catalog-card-margin) {
+
+@media (min-width: $catalog-width-tablet + $catalog-card-margin) {
   .catalog {
-    max-width: $catalog-card-width + $catalog-card-margin;
+    max-width: $catalog-width-tablet;
 
     &__card--double {
-      width: $catalog-card-width;
+      width: 2 * $catalog-card-width + $catalog-card-margin;
     }
 
     &__mobile-hidden {
-      display: none;
+      display: block;
     }
 
     &__desktop-hidden {
-      display: block;
+      display: none;
+    }
+  }
+}
+
+@media (min-width: $catalog-width-desktop + $catalog-card-margin) {
+  .catalog {
+    max-width: $catalog-width-desktop;
+
+    &__card--double {
+      margin-left: auto;
     }
   }
 }
