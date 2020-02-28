@@ -13,6 +13,7 @@ class Webinars extends React.PureComponent {
     };
 
     this._togglePopup = this._togglePopup.bind(this);
+    this._handleCardAdd = this._handleCardAdd.bind(this);
   }
 
   render() {
@@ -26,7 +27,7 @@ class Webinars extends React.PureComponent {
       </section>
       <Catalog cards={cards}/>
       {this.state.isPopupOpen ? <Popup title="Add new" onCloseClick={this._togglePopup}>
-        <CardAdd/>
+        <CardAdd onSubmit={this._handleCardAdd}/>
       </Popup> : null}
     </>;
   }
@@ -36,6 +37,11 @@ class Webinars extends React.PureComponent {
       {isPopupOpen: !this.state.isPopupOpen},
       () => document.body.style.overflow = this.state.isPopupOpen ? 'hidden' : null
     );
+  }
+
+  _handleCardAdd(title, description) {
+    console.log(title);
+    console.log(description);
   }
 }
 

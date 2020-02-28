@@ -13,5 +13,10 @@
 
   &__submit {
     margin-top: 7px;
+
+    &:disabled {
+      background: #ccc;
+      cursor: auto;
+    }
   }
 }
