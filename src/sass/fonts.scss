@@ -1,0 +1,29 @@
+@font-face {
+  font-family: Ubuntu;
+  src:
+    url("../fonts/ubuntu.woff2") format("woff2"),
+    url("../fonts/ubuntu.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Ubuntu;
+  src:
+    url("../fonts/ubuntubold.woff2") format("woff2"),
+    url("../fonts/ubuntubold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ubuntu Medium";
+  src:
+    url("../fonts/ubuntumedium.woff2") format("woff2"),
+    url("../fonts/ubuntumedium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,17 @@
+.card-add {
+  &__file-upload {
+    margin-bottom: 25px;
+  }
+
+  &__description {
+    min-height: 88px;
+  }
+
+  &__buttons {
+    text-align: center;
+  }
+
+  &__submit {
+    margin-top: 7px;
+  }
+}

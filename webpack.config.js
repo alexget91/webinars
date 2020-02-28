@@ -28,6 +28,29 @@ module.exports = {
           fallback: 'style-loader',
           use: ['css-loader', 'sass-loader']
         })
+      },
+      {
+        test: /\.(png|jpg|jpeg)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 1000,
+          name: "img/[name].[ext]"
+        }
+      },
+      {
+        test: /\.svg$/,
+        loader: 'file-loader',
+        options: {
+          limit: 1000,
+          name: "img/[name].[ext]"
+        }
+      },
+      {
+        test: /\.(woff|woff2)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'fonts/[name].[ext]',
+        }
       }
     ],
   },

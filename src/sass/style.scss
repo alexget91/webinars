@@ -1,4 +1,15 @@
-$primary-color: #2e878a;
-body {
-  background-color: $primary-color;
-}
+@import "variables";
+@import "fonts";
+@import "libs/normalize-8.0.1";
+@import "scaffolding";
+@import "blocks/btn";
+@import "blocks/label";
+@import "blocks/form";
+@import "blocks/pagination";
+@import "blocks/popup";
+@import "blocks/page-header";
+@import "blocks/logo";
+@import "blocks/main-header";
+@import "blocks/catalog";
+@import "blocks/card";
+@import "blocks/card-add";

@@ -1,0 +1,29 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 34px;
+    height: 34px;
+    margin: 0 6px 12px;
+    text-decoration: none;
+    color: $theme-blue;
+    background: #f3f3f3;
+
+    &:hover {
+      background: #dee3e5;
+    }
+
+    &.active {
+      color: #fff;
+      background: $theme-blue;
+
+      &:hover {
+        background: #0071bc;
+      }
+    }
+  }
+}
