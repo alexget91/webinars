@@ -1,6 +1,8 @@
+const PAGE_URL_PARAMETER = `page`;
+
 const CardLabel = {
   BASIC: `basic`,
   ADVANCED: `advanced`,
 };
 
-export {CardLabel};
+export {PAGE_URL_PARAMETER, CardLabel};

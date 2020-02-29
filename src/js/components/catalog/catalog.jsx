@@ -1,15 +1,19 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Card from "../card/card";
 import Banner from "../banner/banner";
 import Pagination from "../pagination/pagination";
 import {cardsArray} from "../../common/global-prop-types";
 
+const CARDS_PER_PAGE = 8;
+
 const Catalog = (props) => {
-  const {cards} = props;
+  const {cards, currentPage = 1} = props;
+  const currentCards = cards.slice((currentPage - 1) * CARDS_PER_PAGE, currentPage * CARDS_PER_PAGE);
 
   return <section className="catalog">
     <div className={`catalog__content` + (cards.length > 1 ? `` : ` only-banner`)}>
-      {cards.map((card) => card.srcBig && card.srcSmall ? <Banner
+      {currentCards.map((card) => card.srcBig && card.srcSmall ? <Banner
         key="banner"
         title={card.title}
         srcBig={card.srcBig}
@@ -26,12 +30,18 @@ const Catalog = (props) => {
         cssClass="catalog__card"
       />)}
     </div>
-    <Pagination cssClass="catalog__pagination"/>
+    <Pagination
+      elementsCount={cards.length}
+      elementsPerPage={CARDS_PER_PAGE}
+      currentPage={currentPage}
+      cssClass="catalog__pagination"
+    />
   </section>;
 };
 
 Catalog.propTypes = {
-  cards: cardsArray.isRequired
+  cards: cardsArray.isRequired,
+  currentPage: PropTypes.number,
 };
 
 export default Catalog;
