@@ -1,16 +1,29 @@
 import React from "react";
 import {connect} from "react-redux";
+import {Route, Switch} from "react-router-dom";
 import Page from "../page/page";
 import Webinars from "../webinars/webinars";
 import {cardsArray} from "../../common/global-prop-types";
 import {ActionCreator} from "../../reducer/reducer";
 import PropTypes from "prop-types";
+import {PAGE_URL_PARAMETER} from "../../common/constants";
 
 const App = (props) => {
   const {cards, onCardAddSubmit} = props;
 
   return <Page>
-    <Webinars cards={cards} onCardAddSubmit={onCardAddSubmit}/>
+    <Switch>
+      <Route path={`/`} exact render={(routeProps) => {
+        const pageNumber = parseInt(new URLSearchParams(routeProps.location.search).get(PAGE_URL_PARAMETER));
+        return <Webinars
+          cards={cards}
+          currentPage={pageNumber ? pageNumber : 1}
+          onCardAddSubmit={onCardAddSubmit}
+        />;
+      }}/>
+
+      <Route render={() => `Page not found!`}/>
+    </Switch>
   </Page>;
 };
 
