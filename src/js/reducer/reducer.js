@@ -1,4 +1,4 @@
-import cards from "../mocks/cards";
+const LOCAL_STORAGE_CARDS_KEY = `cards`;
 
 const ActionType = {
   SET_CARDS: `SET_CARDS`,
@@ -17,14 +17,20 @@ const addCard = (cards, newCard) => {
     imageSrc: `pictures/article1.jpg`,
   });
 
+  localStorage.setItem(LOCAL_STORAGE_CARDS_KEY, JSON.stringify(cards));
+
   return cards;
 };
 
+const getCardsFromStorage = () => JSON.parse(localStorage.getItem(LOCAL_STORAGE_CARDS_KEY));
+
 const ActionCreator = {
-  setCards: (cards) => ({
-    type: ActionType.SET_CARDS,
-    payload: cards,
-  }),
+  setCards: (cards) => {
+    return {
+      type: ActionType.SET_CARDS,
+      payload: cards ? cards : [],
+    }
+  },
   addCard: (card) => ({
     type: ActionType.ADD_CARD,
     payload: card,
@@ -32,7 +38,7 @@ const ActionCreator = {
 };
 
 const Operation = {
-  loadCards: ActionCreator.setCards(cards),
+  loadCards: ActionCreator.setCards(getCardsFromStorage()),
 };
 
 const reducer = (state = initialState, action) => {

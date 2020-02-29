@@ -12,6 +12,10 @@ $catalog-width-tablet: 2 * ($catalog-card-width + $catalog-card-margin);
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
+
+    &.only-banner {
+      justify-content: center;
+    }
   }
 
   &__card {
@@ -63,6 +67,10 @@ $catalog-width-tablet: 2 * ($catalog-card-width + $catalog-card-margin);
 
     &__card--double {
       margin-left: auto;
+    }
+
+    &__content.only-banner &__card--double {
+      margin-right: auto;
     }
   }
 }

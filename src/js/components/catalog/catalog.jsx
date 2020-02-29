@@ -8,7 +8,7 @@ const Catalog = (props) => {
   const {cards} = props;
 
   return <section className="catalog">
-    <div className="catalog__content">
+    <div className={`catalog__content` + (cards.length > 1 ? `` : ` only-banner`)}>
       {cards.map((card) => card.srcBig && card.srcSmall ? <Banner
         key="banner"
         title={card.title}
