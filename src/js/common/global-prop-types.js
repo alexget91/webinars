@@ -6,7 +6,7 @@ const cardLabel = PropTypes.oneOf(Object.values(CardLabel));
 const cardData = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  text: PropTypes.string,
+  description: PropTypes.string,
   imageSrc: PropTypes.string.isRequired,
   label: cardLabel,
 };

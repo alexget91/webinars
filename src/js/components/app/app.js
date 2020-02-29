@@ -1,23 +1,32 @@
 import React from "react";
+import {connect} from "react-redux";
 import Page from "../page/page";
 import Webinars from "../webinars/webinars";
-import catalogCards from "../../common/data";
+import {cardsArray} from "../../common/global-prop-types";
+import {ActionCreator} from "../../reducer/reducer";
+import PropTypes from "prop-types";
 
-const BANNER_POSITION = 4;
-const LENGTH_FOR_BANNER_INCLUDE = 5;
-const BANNER_DATA = {
-  title: `Banner`,
-  srcBig: `pictures/banner-big.png`,
-  srcSmall: `pictures/banner-small.jpg`,
-};
-
-const App = () => {
-  const position = catalogCards.length < LENGTH_FOR_BANNER_INCLUDE ? catalogCards.length : BANNER_POSITION;
-  catalogCards.splice(position, 0, BANNER_DATA);
+const App = (props) => {
+  const {cards, onCardAddSubmit} = props;
 
   return <Page>
-    <Webinars cards={catalogCards}/>
+    <Webinars cards={cards} onCardAddSubmit={onCardAddSubmit}/>
   </Page>;
 };
 
-export default App;
+App.propTypes = {
+  cards: cardsArray.isRequired,
+  onCardAddSubmit: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state, ownProps) => Object.assign({}, ownProps, {
+  cards: state.cards
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  onCardAddSubmit: (card) => dispatch(ActionCreator.addCard(card)),
+});
+
+export {App};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

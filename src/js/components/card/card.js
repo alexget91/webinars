@@ -2,7 +2,7 @@ import React from "react";
 import {cardFull} from "../../common/global-prop-types";
 
 const Card = (props) => {
-  const {title, text, imageSrc, label, url, cssClass} = props;
+  const {title, description, imageSrc, label, url, cssClass} = props;
 
   return <article className={`card ` + cssClass}>
     <a href={url}>
@@ -12,7 +12,7 @@ const Card = (props) => {
       <h2 className="card__title">
         <a href={url}>{title}</a>
       </h2>
-      <p className="card__text">{text}</p>
+      <p className="card__text">{description}</p>
       <div className="card__footer">
         {label ? <div className="label">{label}</div> : null}
       </div>

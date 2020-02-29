@@ -59,7 +59,7 @@ class CardAdd extends React.PureComponent {
     const {onSubmit} = this.props;
     const {title, description} = this.state;
 
-    onSubmit(title, description);
+    onSubmit({title, description});
   }
 }
 

@@ -3,6 +3,15 @@ import Catalog from "../catalog/catalog";
 import Popup from "../popup/popup";
 import CardAdd from "../card-add/card-add";
 import {cardsArray} from "../../common/global-prop-types";
+import PropTypes from "prop-types";
+
+const BANNER_POSITION = 4;
+const LENGTH_FOR_BANNER_INCLUDE = 5;
+const BANNER_DATA = {
+  title: `Banner`,
+  srcBig: `pictures/banner-big.png`,
+  srcSmall: `pictures/banner-small.jpg`,
+};
 
 class Webinars extends React.PureComponent {
   constructor(props) {
@@ -18,6 +27,10 @@ class Webinars extends React.PureComponent {
 
   render() {
     const {cards} = this.props;
+    const position = cards.length < LENGTH_FOR_BANNER_INCLUDE ? cards.length : BANNER_POSITION;
+    const cardsWithBanner = cards.slice();
+
+    cardsWithBanner.splice(position, 0, BANNER_DATA);
 
     return <>
       <section className="main-header">
@@ -25,7 +38,7 @@ class Webinars extends React.PureComponent {
         <p className="main-header__text">Here you can register and take part in educational webinars conducted by the best digital marketing experts.</p>
         <button className="btn" onClick={this._togglePopup}>Add new</button>
       </section>
-      <Catalog cards={cards}/>
+      <Catalog cards={cardsWithBanner}/>
       {this.state.isPopupOpen ? <Popup title="Add new" onCloseClick={this._togglePopup}>
         <CardAdd onSubmit={this._handleCardAdd}/>
       </Popup> : null}
@@ -40,13 +53,14 @@ class Webinars extends React.PureComponent {
   }
 
   _handleCardAdd(title, description) {
-    console.log(title);
-    console.log(description);
+    this.props.onCardAddSubmit(title, description);
+    this._togglePopup();
   }
 }
 
 Webinars.propTypes = {
-  cards: cardsArray.isRequired
+  cards: cardsArray.isRequired,
+  onCardAddSubmit: PropTypes.func.isRequired,
 };
 
 export default Webinars;
