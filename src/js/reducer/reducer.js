@@ -14,7 +14,7 @@ const addCard = (cards, newCard) => {
     id: cards.length ? cards[cards.length - 1].id + 1 : 1,
     title: newCard.title,
     description: newCard.description,
-    imageSrc: `pictures/article1.jpg`,
+    imageSrc: newCard.image,
   });
 
   localStorage.setItem(LOCAL_STORAGE_CARDS_KEY, JSON.stringify(cards));

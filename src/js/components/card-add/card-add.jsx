@@ -1,17 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
+import ImageUpload from "../image-upload/image-upload";
+import {getBase64} from "../../common/utils";
 
 class CardAdd extends React.PureComponent {
   constructor(props) {
     super(props);
 
     this.state = {
+      image: null,
       title: ``,
       description: ``,
       isSubmitEnabled: false,
     };
 
     this._checkSubmitPossibility = this._checkSubmitPossibility.bind(this);
+    this._handleImageChange = this._handleImageChange.bind(this);
     this._handleFormChange = this._handleFormChange.bind(this);
     this._handleSubmit = this._handleSubmit.bind(this);
   }
@@ -19,9 +23,10 @@ class CardAdd extends React.PureComponent {
   render() {
     return <div className="card-add">
       <form className="form" onSubmit={this._handleSubmit}>
-        <div className="card-add__file-upload">
-          <input type="file"/>
-        </div>
+        <ImageUpload
+          onImageUpload={this._handleImageChange}
+          cssClass="card-add__image-upload"
+        />
         <div className="form__field">
           <label htmlFor="card-add-title" className="form__label">Title</label>
           <input type="text" id="card-add-title" className="form__text-input" name="title"
@@ -39,6 +44,17 @@ class CardAdd extends React.PureComponent {
     </div>;
   }
 
+  _handleImageChange(images) {
+    if (images && images.length) {
+      getBase64(images[0], (base64) => {
+        this.setState({image: base64}, this._checkSubmitPossibility);
+      });
+
+    } else {
+      this.setState({image: null}, this._checkSubmitPossibility);
+    }
+  }
+
   _handleFormChange(evt) {
     this.setState(Object.assign({}, this.state, {
       [evt.target.name]: evt.target.value
@@ -46,10 +62,10 @@ class CardAdd extends React.PureComponent {
   }
 
   _checkSubmitPossibility() {
-    const {title, description} = this.state;
+    const {title, description, image} = this.state;
 
     this.setState({
-      isSubmitEnabled: title.length && description.length
+      isSubmitEnabled: Boolean(title.length && description.length && image)
     });
   }
 
@@ -57,9 +73,9 @@ class CardAdd extends React.PureComponent {
     evt.preventDefault();
 
     const {onSubmit} = this.props;
-    const {title, description} = this.state;
+    const {title, description, image} = this.state;
 
-    onSubmit({title, description});
+    onSubmit({title, description, image});
   }
 }
 
