@@ -29,37 +29,37 @@ module.exports = {
       {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
+          fallback: `style-loader`,
+          use: [`css-loader`, `sass-loader`]
         })
       },
       {
         test: /\.(png|jpg|jpeg)$/,
-        loader: 'url-loader',
+        loader: `url-loader`,
         options: {
           limit: 1000,
-          name: "img/[name].[ext]"
+          name: `img/[name].[ext]`
         }
       },
       {
         test: /\.svg$/,
-        loader: 'file-loader',
+        loader: `file-loader`,
         options: {
           limit: 1000,
-          name: "img/[name].[ext]"
+          name: `img/[name].[ext]`
         }
       },
       {
         test: /\.(woff|woff2)$/,
-        loader: 'file-loader',
+        loader: `file-loader`,
         options: {
-          name: 'fonts/[name].[ext]',
+          name: `fonts/[name].[ext]`,
         }
-      }
+      },
     ],
   },
   plugins: [
-    new ExtractTextPlugin('style.css')
+    new ExtractTextPlugin(`style.css`)
   ],
   devtool: `source-map`
 };

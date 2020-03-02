@@ -4,13 +4,15 @@ import Popup from "../popup/popup";
 import CardAdd from "../card-add/card-add";
 import {cardsArray} from "../../common/global-prop-types";
 import PropTypes from "prop-types";
+import BannerBig from "../../../img/banner-big.png";
+import BannerSmall from "../../../img/banner-small.jpg";
 
 const BANNER_POSITION = 4;
 const LENGTH_FOR_BANNER_INCLUDE = 5;
 const BANNER_DATA = {
   title: `Banner`,
-  srcBig: `pictures/banner-big.png`,
-  srcSmall: `pictures/banner-small.jpg`,
+  srcBig: BannerBig,
+  srcSmall: BannerSmall,
 };
 
 class Webinars extends React.PureComponent {

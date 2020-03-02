@@ -1,6 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {Link} from "react-router-dom";
+import LogoImg from "../../../img/logo.png";
+import LogoImg2x from "../../../img/logo@2x.png";
+import LogoImg3x from "../../../img/logo@3x.png";
 
 const Page = (props) => {
   const {children} = props;
@@ -8,8 +11,8 @@ const Page = (props) => {
   return <>
     <header className="page-header">
       <Link to="/" className="logo">
-        <img src="pictures/logo.png"
-          srcSet="pictures/logo@2x.png 2x, pictures/logo@3x.png 3x"
+        <img src={LogoImg}
+          srcSet={`${LogoImg2x} 2x, ${LogoImg3x} 3x`}
           className="logo__image" alt="SEMrush"/>
       </Link>
     </header>

@@ -13,8 +13,8 @@ Array [
       <img
         alt="SEMrush"
         className="logo__image"
-        src="pictures/logo.png"
-        srcSet="pictures/logo@2x.png 2x, pictures/logo@3x.png 3x"
+        src="test-file-stub"
+        srcSet="test-file-stub 2x, test-file-stub 3x"
       />
     </a>
   </header>,
@@ -96,7 +96,7 @@ Array [
             >
               <img
                 alt="Banner"
-                src="pictures/banner-big.png"
+                src="test-file-stub"
               />
             </div>
             <div
@@ -104,7 +104,7 @@ Array [
             >
               <img
                 alt="Banner"
-                src="pictures/banner-small.jpg"
+                src="test-file-stub"
               />
             </div>
           </a>

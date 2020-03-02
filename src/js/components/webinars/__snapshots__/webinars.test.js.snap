@@ -77,7 +77,7 @@ Array [
           >
             <img
               alt="Banner"
-              src="pictures/banner-big.png"
+              src="test-file-stub"
             />
           </div>
           <div
@@ -85,7 +85,7 @@ Array [
           >
             <img
               alt="Banner"
-              src="pictures/banner-small.jpg"
+              src="test-file-stub"
             />
           </div>
         </a>
