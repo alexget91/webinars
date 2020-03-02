@@ -1,3 +1,5 @@
+import {CardLabel} from "../common/constants";
+
 const LOCAL_STORAGE_CARDS_KEY = `cards`;
 
 const ActionType = {
@@ -9,14 +11,18 @@ const initialState = {
   cards: [],
 };
 
-const addCard = (cards, newCard) => {
-  cards.push({
-    id: cards.length ? cards[cards.length - 1].id + 1 : 1,
-    title: newCard.title,
-    description: newCard.description,
-    imageSrc: newCard.image,
-  });
+const addCard = (cards, data) => {
+  const id = cards.length ? cards[cards.length - 1].id + 1 : 1;
+  const newCard = {
+    id: id,
+    title: data.title,
+    description: data.description,
+    imageSrc: data.image,
+  };
 
+  (id === 1) && (newCard.label = CardLabel.ADVANCED);
+
+  cards.push(newCard);
   localStorage.setItem(LOCAL_STORAGE_CARDS_KEY, JSON.stringify(cards));
 
   return cards;

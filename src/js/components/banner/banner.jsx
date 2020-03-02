@@ -5,7 +5,7 @@ import {bannerFull} from "../../common/global-prop-types";
 const Banner = (props) => {
   const {title, srcBig, srcSmall, url, cssClass} = props;
 
-  return <div className={`card card--double ` + cssClass}>
+  return <div className={`card card--double ${cssClass}`}>
     <Link to={url} className="card__double-inner">
       <div className="catalog__mobile-hidden">
         <img src={srcBig} alt={title}/>

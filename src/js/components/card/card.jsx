@@ -5,7 +5,7 @@ import {cardFull} from "../../common/global-prop-types";
 const Card = (props) => {
   const {title, description, imageSrc, label, url, cssClass} = props;
 
-  return <article className={`card ` + cssClass}>
+  return <article className={`card ${cssClass}`}>
     <Link to={url}>
       <img src={imageSrc} className="card__image" alt={title}/>
     </Link>

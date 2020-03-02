@@ -26,6 +26,7 @@ const Catalog = (props) => {
         title={card.title}
         description={card.description}
         imageSrc={card.imageSrc}
+        label={card.label}
         url="#"
         cssClass="catalog__card"
       />)}

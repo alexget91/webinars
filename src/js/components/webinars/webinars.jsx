@@ -21,6 +21,7 @@ class Webinars extends React.PureComponent {
       isPopupOpen: false
     };
 
+    this._disablePageScroll = this._disablePageScroll.bind(this);
     this._togglePopup = this._togglePopup.bind(this);
     this._handleCardAdd = this._handleCardAdd.bind(this);
   }
@@ -45,10 +46,18 @@ class Webinars extends React.PureComponent {
     </>;
   }
 
+  _disablePageScroll() {
+    document.body.style.overflow = this.state.isPopupOpen ? 'hidden' : null;
+    const root = document.querySelector(`#root`);
+    if (root) {
+      root.style.overflow = this.state.isPopupOpen ? 'scroll' : null;
+    }
+  }
+
   _togglePopup() {
     this.setState(
       {isPopupOpen: !this.state.isPopupOpen},
-      () => document.body.style.overflow = this.state.isPopupOpen ? 'hidden' : null
+      this._disablePageScroll
     );
   }
 
