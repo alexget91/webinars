@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Page correctly renders after relaunch 1`] = `
+Array [
+  <header
+    className="page-header"
+  >
+    <a
+      className="logo"
+      href="/"
+      onClick={[Function]}
+    >
+      <img
+        alt="SEMrush"
+        className="logo__image"
+        src="pictures/logo.png"
+        srcSet="pictures/logo@2x.png 2x, pictures/logo@3x.png 3x"
+      />
+    </a>
+  </header>,
+  <main
+    className="page-main"
+  >
+    <div>
+      test
+    </div>
+  </main>,
+]
+`;

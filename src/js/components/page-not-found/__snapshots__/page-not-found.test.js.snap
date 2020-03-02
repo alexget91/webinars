@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Page not found message correctly renders after relaunch 1`] = `"Page not found!"`;

@@ -7,6 +7,7 @@ import {cardsArray} from "../../common/global-prop-types";
 import {ActionCreator} from "../../reducer/reducer";
 import PropTypes from "prop-types";
 import {PAGE_URL_PARAMETER} from "../../common/constants";
+import PageNotFound from "../page-not-found/page-not-found";
 
 const App = (props) => {
   const {cards, onCardAddSubmit} = props;
@@ -22,7 +23,7 @@ const App = (props) => {
         />;
       }}/>
 
-      <Route render={() => `Page not found!`}/>
+      <Route component={PageNotFound}/>
     </Switch>
   </Page>;
 };

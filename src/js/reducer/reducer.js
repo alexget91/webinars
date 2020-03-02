@@ -25,12 +25,10 @@ const addCard = (cards, newCard) => {
 const getCardsFromStorage = () => JSON.parse(localStorage.getItem(LOCAL_STORAGE_CARDS_KEY));
 
 const ActionCreator = {
-  setCards: (cards) => {
-    return {
-      type: ActionType.SET_CARDS,
-      payload: cards ? cards : [],
-    }
-  },
+  setCards: (cards) => ({
+    type: ActionType.SET_CARDS,
+    payload: cards ? cards : [],
+  }),
   addCard: (card) => ({
     type: ActionType.ADD_CARD,
     payload: card,
@@ -56,4 +54,4 @@ const reducer = (state = initialState, action) => {
   return state;
 };
 
-export {ActionCreator, Operation, reducer};
+export {ActionType, ActionCreator, Operation, reducer};

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Popup correctly renders after relaunch 1`] = `
+<div
+  className="popup"
+>
+  <div
+    className="popup__overlay"
+    onClick={[MockFunction]}
+  />
+  <div
+    className="popup__body"
+  >
+    <div
+      className="popup__close"
+      onClick={[MockFunction]}
+    />
+    <h2
+      className="popup__title"
+    >
+      title
+    </h2>
+    <div>
+      test
+    </div>
+  </div>
+</div>
+`;

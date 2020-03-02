@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Banner correctly renders after relaunch 1`] = `
+<div
+  className="card card--double cssClass"
+>
+  <a
+    className="card__double-inner"
+    href="/url"
+    onClick={[Function]}
+  >
+    <div
+      className="catalog__mobile-hidden"
+    >
+      <img
+        alt="title"
+        src="srcBig"
+      />
+    </div>
+    <div
+      className="catalog__desktop-hidden"
+    >
+      <img
+        alt="title"
+        src="srcSmall"
+      />
+    </div>
+  </a>
+</div>
+`;

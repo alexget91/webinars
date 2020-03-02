@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Webinars correctly renders after relaunch 1`] = `
+Array [
+  <section
+    className="main-header"
+  >
+    <h1
+      className="main-header__title"
+    >
+      Webinars
+    </h1>
+    <p
+      className="main-header__text"
+    >
+      Here you can register and take part in educational webinars conducted by the best digital marketing experts.
+    </p>
+    <button
+      className="btn"
+      onClick={[Function]}
+    >
+      Add new
+    </button>
+  </section>,
+  <section
+    className="catalog"
+  >
+    <div
+      className="catalog__content"
+    >
+      <article
+        className="card catalog__card"
+      >
+        <a
+          href="/"
+          onClick={[Function]}
+        >
+          <img
+            alt="title"
+            className="card__image"
+            src="imageSrc"
+          />
+        </a>
+        <div
+          className="card__content"
+        >
+          <h2
+            className="card__title"
+          >
+            <a
+              href="/"
+              onClick={[Function]}
+            >
+              title
+            </a>
+          </h2>
+          <p
+            className="card__text"
+          >
+            description
+          </p>
+          <div
+            className="card__footer"
+          />
+        </div>
+      </article>
+      <div
+        className="card card--double catalog__card catalog__card--double"
+      >
+        <a
+          className="card__double-inner"
+          href="/"
+          onClick={[Function]}
+        >
+          <div
+            className="catalog__mobile-hidden"
+          >
+            <img
+              alt="Banner"
+              src="pictures/banner-big.png"
+            />
+          </div>
+          <div
+            className="catalog__desktop-hidden"
+          >
+            <img
+              alt="Banner"
+              src="pictures/banner-small.jpg"
+            />
+          </div>
+        </a>
+      </div>
+    </div>
+    <div
+      className="pagination catalog__pagination"
+    >
+      <a
+        className="pagination__link active"
+        href="/?page=1"
+        onClick={[Function]}
+      >
+        1
+      </a>
+    </div>
+  </section>,
+]
+`;

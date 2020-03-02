@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination correctly renders after relaunch 1`] = `
+<div
+  className="pagination cssClass"
+>
+  <a
+    className="pagination__link active"
+    href="/?page=1"
+    onClick={[Function]}
+  >
+    1
+  </a>
+  <a
+    className="pagination__link"
+    href="/?page=2"
+    onClick={[Function]}
+  >
+    2
+  </a>
+</div>
+`;

@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card correctly renders after relaunch 1`] = `
+<article
+  className="card cssClass"
+>
+  <a
+    href="/url"
+    onClick={[Function]}
+  >
+    <img
+      alt="Title"
+      className="card__image"
+      src="imageSrc"
+    />
+  </a>
+  <div
+    className="card__content"
+  >
+    <h2
+      className="card__title"
+    >
+      <a
+        href="/url"
+        onClick={[Function]}
+      >
+        Title
+      </a>
+    </h2>
+    <p
+      className="card__text"
+    >
+      description
+    </p>
+    <div
+      className="card__footer"
+    >
+      <div
+        className="label"
+      >
+        advanced
+      </div>
+    </div>
+  </div>
+</article>
+`;

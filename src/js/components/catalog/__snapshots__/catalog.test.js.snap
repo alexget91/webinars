@@ -1,0 +1,208 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Catalog correctly renders after relaunch With banner only 1`] = `
+<section
+  className="catalog"
+>
+  <div
+    className="catalog__content only-banner"
+  >
+    <div
+      className="card card--double catalog__card catalog__card--double"
+    >
+      <a
+        className="card__double-inner"
+        href="/"
+        onClick={[Function]}
+      >
+        <div
+          className="catalog__mobile-hidden"
+        >
+          <img
+            alt="banner"
+            src="srcBig"
+          />
+        </div>
+        <div
+          className="catalog__desktop-hidden"
+        >
+          <img
+            alt="banner"
+            src="srcSmall"
+          />
+        </div>
+      </a>
+    </div>
+  </div>
+  <div
+    className="pagination catalog__pagination"
+  >
+    <a
+      className="pagination__link active"
+      href="/?page=1"
+      onClick={[Function]}
+    >
+      1
+    </a>
+  </div>
+</section>
+`;
+
+exports[`Catalog correctly renders after relaunch With page parameter 1`] = `
+<section
+  className="catalog"
+>
+  <div
+    className="catalog__content"
+  >
+    <article
+      className="card catalog__card"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        <img
+          alt=""
+          className="card__image"
+          src=""
+        />
+      </a>
+      <div
+        className="card__content"
+      >
+        <h2
+          className="card__title"
+        >
+          <a
+            href="/"
+            onClick={[Function]}
+          >
+            
+          </a>
+        </h2>
+        <p
+          className="card__text"
+        >
+          
+        </p>
+        <div
+          className="card__footer"
+        />
+      </div>
+    </article>
+  </div>
+  <div
+    className="pagination catalog__pagination"
+  >
+    <a
+      className="pagination__link"
+      href="/?page=1"
+      onClick={[Function]}
+    >
+      1
+    </a>
+    <a
+      className="pagination__link active"
+      href="/?page=2"
+      onClick={[Function]}
+    >
+      2
+    </a>
+  </div>
+</section>
+`;
+
+exports[`Catalog correctly renders after relaunch Without page parameter 1`] = `
+<section
+  className="catalog"
+>
+  <div
+    className="catalog__content"
+  >
+    <article
+      className="card catalog__card"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        <img
+          alt="title1"
+          className="card__image"
+          src="imageSrc1"
+        />
+      </a>
+      <div
+        className="card__content"
+      >
+        <h2
+          className="card__title"
+        >
+          <a
+            href="/"
+            onClick={[Function]}
+          >
+            title1
+          </a>
+        </h2>
+        <p
+          className="card__text"
+        >
+          description1
+        </p>
+        <div
+          className="card__footer"
+        />
+      </div>
+    </article>
+    <article
+      className="card catalog__card"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        <img
+          alt="title2"
+          className="card__image"
+          src="imageSrc2"
+        />
+      </a>
+      <div
+        className="card__content"
+      >
+        <h2
+          className="card__title"
+        >
+          <a
+            href="/"
+            onClick={[Function]}
+          >
+            title2
+          </a>
+        </h2>
+        <p
+          className="card__text"
+        >
+          description2
+        </p>
+        <div
+          className="card__footer"
+        />
+      </div>
+    </article>
+  </div>
+  <div
+    className="pagination catalog__pagination"
+  >
+    <a
+      className="pagination__link active"
+      href="/?page=1"
+      onClick={[Function]}
+    >
+      1
+    </a>
+  </div>
+</section>
+`;
